@@ -42,15 +42,6 @@
 <body>
 	
 	
-	
-
-
-
-
-
-
-
-
 
 
 	<c:if test="${! empty sessionScope.USER_IN_SESSION}">
