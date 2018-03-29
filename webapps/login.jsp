@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>欢迎进入商品管理系统!!!</title>
+<title>登录</title>
     <style type="text/css">
     body {
            margin:0;
@@ -13,19 +13,10 @@
            text-align: center;
           background-image:url( ${pageContext.request.contextPath}/backImage?filename=xxx.jpg );
     }
-    #first {
-        margin :10px auto;
-        width:100px;
-        height:200px;
+    #first{
+        margin :80px;
+    }
     
-    }
-    #randomcodeinput {
-    
-    }
-
-    #randomcode {
-    float: none;
-    }
     </style>
 <script type="text/javascript">
         function change() {
@@ -46,12 +37,12 @@
 
 	<c:if test="${! empty sessionScope.USER_IN_SESSION}">
 		<jsp:forward page="${pageContext.request.contextPath}/product"></jsp:forward></c:if>
-    <font color="white">欢迎进入商品管理系统!!!</font>
+    
 	<div id="first">
 		
 
 		<!--  判断是否有Sessionn,有就直接跳转,没有就需要登录 -->
-
+    
 		<span style="color: red"> ${ErrorMsg}</span>
 		<form action="${pageContext.request.contextPath}/login" method="post">
 			<input style="margin-bottom: 5px" type="text" name="username"
