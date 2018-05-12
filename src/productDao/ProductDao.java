@@ -24,4 +24,5 @@ public interface ProductDao<T> {
 	
 	
 	public PageList query(IQuery po) throws SQLException;
+	public void doWork();
 }

@@ -27,7 +27,6 @@ public class MessageFilter implements Filter {
 		// 处理请求中的request.paramter对应属性的关键词
 		// 重写请求的getParameter方法
 		MyHttpServletRequestWapper myHttpServletRequestWapper = new MyHttpServletRequestWapper(requ);
-		
 		// 放行
 		chain.doFilter(myHttpServletRequestWapper, resp);
 		

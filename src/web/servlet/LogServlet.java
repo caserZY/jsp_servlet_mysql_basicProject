@@ -25,7 +25,6 @@ public class LogServlet extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest requ, HttpServletResponse resp) throws ServletException, IOException {
-		
 		PreparedStatement ps = null;
 		Connection conn = null;
 		ResultSet rs = null;
@@ -86,13 +85,13 @@ public class LogServlet extends HttpServlet {
 			// 登录成功,将用户信息存在SESSION中
 			HttpSession session = requ.getSession();
 			session.setAttribute("USER_IN_SESSION", person);
-			resp.sendRedirect("/product");
+			resp.sendRedirect("/productServlet?action=list");
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 
-			MyDBUtils.close(ps, conn, rs);
+			MyDBUtils.close(ps,rs,conn);
 		}
 
 	}

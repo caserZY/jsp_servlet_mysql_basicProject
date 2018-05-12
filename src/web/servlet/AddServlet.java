@@ -24,8 +24,7 @@ public class AddServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		TokenUtils.creatToken(request, response);
-		request.getRequestDispatcher("/WEB-INF/add.jsp").forward(request, response);
+		
 	}
 }
 

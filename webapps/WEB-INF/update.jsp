@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath}/product?method=update"
+	<form action="${pageContext.request.contextPath}/productServlet?action=update"
 		method="post">
 		<table>
 			<tr>

@@ -11,7 +11,7 @@ public class PageList {
 	private List<Product> pageListData;
 	// 集合中存储的是结果的封装(商品的集合)
 	private Integer totalCount; // 总记录数
-	private Integer beginPage; // 开始页
+	private Integer beginPage; // 开始页  
 	private Integer currentPage; // 当前页
 	private Integer pageSize; // 一页显示多少
 	
@@ -35,7 +35,7 @@ public class PageList {
 	public Integer getPageCount() {
 		return totalCount % pageSize == 0 ? totalCount / pageSize : totalCount / pageSize + 1;
 	}
-
+	
 	public Integer getPrePage() {
 		return currentPage - 1 >= 1 ? currentPage - 1 : 1;
 	}

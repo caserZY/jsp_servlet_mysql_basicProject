@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form action="${pageContext.request.contextPath}/product?method=add"
+	<form action="${pageContext.request.contextPath}/productServlet?action=add"
 		method="post">
 		<input type="hidden" name="token" value="${token}" />
 		<table>

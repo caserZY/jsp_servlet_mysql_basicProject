@@ -43,14 +43,14 @@ public interface RandomCodeUtils {
 		requ.getSession().setAttribute(RANDOMCODE_IN_SESSION, code);
 
 		// 下面的代码 ,请忽略
-		//创建图片对象
-		int width = 80;
-		int height = 40;
+		//创建图片对象 100,46
+		int width = 105;
+		int height = 45;
 		int imageType = BufferedImage.TYPE_INT_RGB;
 		BufferedImage image = new BufferedImage(width, height, imageType);
 		//画板
 		Graphics g = image.getGraphics();
-		g.setColor(Color.yellow);
+		g.setColor(Color.white);
 		// 绘制一个实心 人矩形
 		g.fillRect(1, 1, width - 2, height - 2);
 		// 把随机数画入图片中

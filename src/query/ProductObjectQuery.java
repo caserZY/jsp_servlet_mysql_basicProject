@@ -18,8 +18,8 @@ public class ProductObjectQuery extends BaseObjectQuery {
 	// 查询的条件
 	public String productName;
 	private BigDecimal minSalePrice;
-	private BigDecimal maxSalePrice;
 
+	private BigDecimal maxSalePrice;
 	@Override
 	public void costuomize() {
 		

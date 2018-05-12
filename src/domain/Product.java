@@ -2,6 +2,8 @@ package domain;
 
 import java.math.BigDecimal;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * 管理项目的商品实体类
  * 
@@ -47,6 +49,20 @@ public class Product {
 		this.cutoff = cutoff;
 		this.dir_id = dir_id;
 	}
-
+	
+	public  Product(HttpServletRequest request) {
+		super();
+		if(!(request.getParameter("id")==null)) {
+			this.id = Long.valueOf(request.getParameter("id"));
+		}
+		
+		this.productName = request.getParameter("productName");
+		this.brand = request.getParameter("brand");
+		this.supplier = request.getParameter("supplier");
+		this.salePrice = new BigDecimal(request.getParameter("salePrice"));
+		this.costPrice = new BigDecimal(request.getParameter("costPrice"));
+		this.cutoff = Double.valueOf(request.getParameter("cutoff"));
+		this.dir_id = Long.valueOf(request.getParameter("dir_id"));
+	}
 
 }

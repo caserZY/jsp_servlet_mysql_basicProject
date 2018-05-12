@@ -47,7 +47,6 @@ public class ImageIOToResponseOutputStream {
 			BufferedImage read = ImageIO.read(file);
 			ImageIO.write(read, formatName, response.getOutputStream());
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

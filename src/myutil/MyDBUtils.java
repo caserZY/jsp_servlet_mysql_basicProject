@@ -10,6 +10,7 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.commons.dbcp2.BasicDataSourceFactory;
+
 /**
  * 数据库的工具类
  */
@@ -28,17 +29,18 @@ public enum MyDBUtils {
 			e.printStackTrace();
 		}
 	}
-	
-/**
- * 创建一个实例{@link com.mysql.jdbc.Connection}
- * @return
- * @throws Exception
- */
+
+	/**
+	 * 创建一个实例{@link com.mysql.jdbc.Connection}
+	 * @return
+	 * @throws Exception
+	 */
 	public Connection getConnection() throws Exception {
 		Connection connection = dataSource.getConnection();
 		return connection;
 
 	}
+
 	// ,每次查询后,必须关闭数据库的连接
 	/**
 	 * 
@@ -46,7 +48,7 @@ public enum MyDBUtils {
 	 * @param conn
 	 * @param rs
 	 */
-	public  static void close(PreparedStatement ps, Connection conn, ResultSet rs) {
+	public static void close(PreparedStatement ps, ResultSet rs,Connection conn) {
 
 		try {
 			if (ps != null)
@@ -55,27 +57,25 @@ public enum MyDBUtils {
 
 			e.printStackTrace();
 		} finally {
-			try {
-				if (conn != null)
-					conn.close();
-			} catch (Exception e2) {
-				e2.printStackTrace();
-			} finally {
-				try {
-					if (rs != null)
-						rs.close();
-				} catch (SQLException e) {
 
-					e.printStackTrace();
+			try {
+				if (rs != null)
+					rs.close();
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			} finally {
+				if (conn != null) {
+					try {
+						conn.close();
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
 				}
 			}
 
 		}
 
 	}
-	
-
-
-
 
 }
